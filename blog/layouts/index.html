@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="recent-posts section">
+	<h2 class="section-header">
+		Recent posts
+	</h2>
+	<div class="posts">
+		{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+		{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+		{{ range $paginator.Pages }}
+		<div class="post">
+			<div class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> -
+			{{ template "partials/pagedescription.html" . }}
+		</div>
+		{{ end }}
+		{{ template "partials/paginator.html" . }}
+	</div>
+</div>
+{{ end }}

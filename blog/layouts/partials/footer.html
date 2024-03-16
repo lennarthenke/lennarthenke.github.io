@@ -1,0 +1,9 @@
+<div class="footer wrapper">
+	<nav class="nav">
+    <div>{{ dateFormat "2006" now }} &copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+	</nav>
+</div>
+<script>feather.replace()</script>
+{{- with .Site.Params.Social -}}
+<script>feather.replace()</script>
+{{- end -}}
