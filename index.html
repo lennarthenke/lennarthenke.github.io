@@ -1,9 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lennart Henke</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <p>Hello, World!</p>
+  <header class="layout-container">
+    <div class="profile-header">
+      <div id="profile-pic">
+        <img src="assets/profile.jpeg" alt="Portrait of me" width="240" height="240" loading="lazy" decoding="async" />
+      </div>
+      <div class="profile-info">
+        <div>
+          <h1>Lennart Henke</h1>
+          <h2>Exploring the Low-Level</h2>
+        </div>
+        <nav aria-label="Social media links">
+          <a href="https://x.com/lennarthenke" target="_blank" rel="noopener noreferrer">
+            <img src="assets/twitter.svg" alt="Twitter profile" class="social-icon" width="32" height="32" loading="lazy" />
+          </a>
+          <a href="https://github.com/lennarthenke" target="_blank" rel="noopener noreferrer">
+            <img src="assets/github.svg" alt="GitHub profile" class="social-icon" width="32" height="32" loading="lazy" />
+          </a>
+          <a href="mailto:lennarthenke@live.com">
+            <img src="assets/mail.svg" alt="Email Lennart" class="social-icon" width="32" height="32" loading="lazy" />
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <hr/>
+
+  <div id="history" class="layout-container">
+    <div class="timeline-entry">
+      <div class="timeline-date">2023 - </div>
+      <div class="timeline-content">
+        <div class="entry-dot"></div>
+        <img src="assets/TU_Berlin_Logo.png" alt="TU Berlin Logo" />
+        <div class="entry-description">
+          <strong>MSc in Computer Science at the Technical University of Berlin</strong>, with a focus on security and systems.
+          Highlights so far include building a minimal operating system from scratch, working on embedded security by attacking a bare-metal RISC-V firmware, and exploring topics like machine learning for security, compilers and cloud computing.
+        </div>
+      </div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-date">2022 - 2023</div>
+      <div class="timeline-content">
+        <div class="entry-dot"></div>
+        <img src="assets/Fraunhofer_FKIE_Logo.jpeg" alt="Fraunhofer FKIE Logo" />
+        <div class="entry-description">
+          During my time as a <strong>working student at Fraunhofer FKIE</strong>, I was part of the Cyber Analysis & Defense (CA&D) department, specifically in the Software and Firmware Security team.
+          My main contributions included building the IPC plugin, contributing to FACT - the open-source firmware analysis framework of the department - and supporting the team's research.
+        </div>
+      </div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-date">2019 - 2023</div>
+      <div class="timeline-content">
+        <div class="entry-dot"></div>
+        <img src="assets/UNI_Bonn_Logo_Kompakt.jpg" alt="Uni Bonn Logo" />
+        <div class="entry-description">
+          <strong>BSc in Computer Science at the University of Bonn</strong>, where I first got into information security.
+          During my studies, I build an inter-process communication tool that led to a working student position at the Fraunhofer Institute. I wrote my bachelor's thesis on symbolic execution, exploring how program paths can be analyzed systematically.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout-container">
+    <h3>Projects</h3>
+    <div class="project-entry">
+      <div class="project-image">
+        <img src="assets/angry_face.png" alt="angr Logo" />
+      </div>
+      <div class="project-description">
+        <a href="https://github.com/lennarthenke/symbolic-uaf-detection">symbolic-uaf-detection</a>:
+        Built for my bachelor's thesis, this is a symbolic execution tool using <a href="https://angr.io/">angr</a> to detect Use-After-Free vulnerabilities in binaries.
+        It includes multiple execution modes to mitigate path explosion.
+      </div>
+      <div class="project-clear"></div>
+    </div>
+    <div class="project-entry">
+      <div class="project-image">
+        <img src="assets/Ghidra_logo.svg" alt="Ghidra Logo" />
+      </div>
+      <div class="project-description">
+        <a href="https://github.com/fkie-cad/FACT_core/tree/master/src/plugins/analysis/ipc"> ipc</a>:
+        A <a href="https://github.com/fkie-cad/FACT_core">FACT</a> and <a href="https://github.com/NationalSecurityAgency/ghidra">Ghidra</a> plugin built during my time at Fraunhofer for reverse-engineering inter-process communication via static analysis.
+        It detects constructs like <code>os.system</code>, <code>exec*</code> calls, shared memory, named pipes, and message queues - useful for understanding how binaries communicate.
+      </div>
+      <div class="project-clear"></div>
+    </div>
+  </div>
 </body>
 </html>
